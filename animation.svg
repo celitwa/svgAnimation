@@ -6,16 +6,31 @@
 	
 	<defs>
 	    <g id="sun">
-	        <circle cx="50" cy="50" r="50" style="fill:#fbe258"/>
+	        <circle cx="30" cy="30" r="30" style="fill:#fbe258"/>
 	    </g>
+	    <path id="sunPath" d="M0,250
+             A10,10 0 1,1 420,250"
+          style="stroke:#660000; fill:none;"/>
 	</defs>
 
-	<use xlink:href="#sun" x="250" y="250">
-		<animateTransform
+	<use xlink:href="#sun" x="0" y="0">
+		<!-- animateTransform
             attributeName="transform" type="rotate"
-            values="0 0 0; 360 0 0"
+            values="0 0 0; -90 50 50"
             additive="sum"
             dur="6s"
+            repeatCount="indefinite"/-->
+        <animateMotion
+            begin="0s" dur="10s" repeatCount="indefinite">
+          <mpath xlink:href="#sunPath"/>
+        </animateMotion>
+        <animateTransform
+            attributeName="transform" type="scale"
+            values="0.5; 1.5; 0.5"
+            additive="sum"
+            dur="10s"
             repeatCount="indefinite" />
 	</use>
+	<rect x="0" y="250" height="250" width="500"
+        style="fill: #00cc00"/>
 </svg>
