@@ -1,0 +1,21 @@
+<svg version="1.1"
+     baseProfile="full"
+     width="500" height="500"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+	
+	<defs>
+	    <g id="sun">
+	        <circle cx="50" cy="50" r="50" style="fill:#fbe258"/>
+	    </g>
+	</defs>
+
+	<use xlink:href="#sun" x="250" y="250">
+		<animateTransform
+            attributeName="transform" type="rotate"
+            values="0 0 0; 360 0 0"
+            additive="sum"
+            dur="6s"
+            repeatCount="indefinite" />
+	</use>
+</svg>
