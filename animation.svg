@@ -19,14 +19,28 @@
 	    <path id="sunPath" d="M0,250
              A10,10 0 1,1 420,250"
           style="stroke:#660000; fill:none;"/>
+      <image id="cloud" x="-74" y="40" width="74" height="29" xlink:href="cloud.png" />
 	</defs>
 	<rect x="0" y="0" height="250" width="500" style="fill: #02122e">
         <animate
+            id="backgroundAnim"
             attributeName="fill"
             values="#02122e; #2f61a6; #8be0f9; #8be0f9; #2f61a6; #02122e;"
             dur="10s"
             repeatCount="indefinite" />
 	</rect>
+  <use xlink:href="#cloud">
+   <animate attributeName="x" attributeType="XML"
+             from="0"  to="574"
+             begin="2s; backgroundAnim.repeatEvent+2s" dur="4s"
+    />
+  </use>
+  <use xlink:href="#cloud" y="50">
+   <animate attributeName="x" attributeType="XML"
+             from="0"  to="574"
+             begin="3s; backgroundAnim.repeatEvent+3s" dur="4s"
+    />
+  </use>
 	<use xlink:href="#sun" x="0" y="0">
         <animateMotion
             begin="0s" dur="10s" repeatCount="indefinite">
